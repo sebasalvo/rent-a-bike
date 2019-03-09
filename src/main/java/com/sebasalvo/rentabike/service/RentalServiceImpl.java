@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 @Service
 public class RentalServiceImpl implements RentalService {
 
-    public int calculateRentalCost(RentalDTO rentalDTO) throws Exception {
+    public int calculateRegularRentalCost(RentalDTO rentalDTO) throws Exception {
 
         if(Objects.nonNull(rentalDTO)) {
             return rentalDTO.getDuration() * rentalDTO.getRentalType().getPrice();

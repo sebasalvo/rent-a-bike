@@ -16,10 +16,10 @@ import static org.hamcrest.Matchers.equalTo;
 public class HomeControllerTest {
 
     @Test
-    public void testHomePage() {
-        TestRestTemplate restTemplate = new TestRestTemplate();
+    public void testHome() {
+        TestRestTemplate testRestTemplate = new TestRestTemplate();
         ResponseEntity<String> response =
-                restTemplate.getForEntity("http://localhost:8080/", String.class);
+                testRestTemplate.getForEntity("http://localhost:8080/", String.class);
 
         assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 
