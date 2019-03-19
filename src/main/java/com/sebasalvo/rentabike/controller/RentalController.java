@@ -17,12 +17,12 @@ public class RentalController {
     @Autowired
     private RentalService rentalService;
 
-    @RequestMapping(value = "rental/regular", method = RequestMethod.GET)
+    @RequestMapping(value = "rental/regular", method = RequestMethod.POST)
     public int regularRental(@RequestBody RentalDTO rentalDTO) throws Exception{
         return rentalService.calculateRegularRentalCost(rentalDTO);
     }
 
-    @RequestMapping(value = "rental/family", method = RequestMethod.GET)
+    @RequestMapping(value = "rental/family", method = RequestMethod.POST)
     public double familyRental(@RequestBody List<RentalDTO> rentalDTOList) throws Exception {
         return rentalService.calculateFamilyRentalCost(rentalDTOList);
     }
